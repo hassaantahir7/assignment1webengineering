@@ -1,0 +1,830 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+@font-face {
+    font-family: 'nunito';
+    src: url(./assets/fonts/NunitoSans-Regular.ttf);
+}
+:root {
+  --black: #232323;
+  --yellow:#f8f2ed;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 14vh;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: flex;
+  width: 43%;
+  justify-content: flex-end;
+  gap: 1rem;
+  font-size: 18px;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: var(--black);
+}
+
+.nav > .nav-links > a:hover {
+  background-color: var(--yellow);
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:600px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 3px solid rgb(64, 64, 64);
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-headings {
+  font-size: 3.6rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+header {
+  width: 100%;
+  height: 16vh;
+}
+.nav-links {
+  width: 50%;
+}
+nav {
+  width: 96%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2rem 0 0 0;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li a
+{
+  text-decoration: none;
+  font-size: 1.18rem;
+  color: var(--black);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.logo {
+  width: 20%;
+}
+.logo img {
+  height: 42px;
+  width: 90px;
+}
+.search-bar {
+  width: 231px;
+  height: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.6em;
+  box-shadow: 2px 2px 6px #e1e1e1;
+  border-radius: 0.7rem;
+}
+.search-bar input
+{
+  padding: 0.1rem;
+  outline: none;
+  padding-left: 0.4rem;
+  width: 60%;
+  font-size: 1.18rem;
+  border: none;
+  border-right: 1px solid gray;
+}
+#bar-link
+{
+  display: flex;
+  gap: 0.25rem;
+}
+.home {
+  background: url(./assets/images/background.png);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+.home .banner {
+  height: 512px;
+  width: 534px;
+  margin-top: 2rem;
+}
+.home .banner img {
+  height: 512px;
+  width: 534px;
+} 
+.home .text
+{
+  width: 40%;
+}
+.home .text .home-heading
+{
+  font-size: 3.6rem;
+  padding-top: 4rem;
+  margin-bottom: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  width:94%;
+}
+.home .text .home-description
+{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  line-height: 1.9rem;
+}
+#watch
+{
+  height: 60px;
+  width: 180px;
+}
+.cta-imgs
+{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.cta-imgs img
+{
+  cursor: pointer;
+}
+
+/* ---------------------- Carosel section --------------------------- */
+.carosel {
+  height: 40vh;
+  position: relative;
+  bottom: 8rem;
+}
+.carosel .carosel-row {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  position: relative;
+}
+
+/* ---------------------------------- Collections ---------------------------- */
+
+.collection {
+  height: 90vh;
+  width: 100%;
+}
+.collection h1 {
+  padding-left: 4rem;
+}
+.collection-row {
+  width: auto;
+  margin-top: 3rem;
+  display: flex;
+  gap: 4rem;
+}
+.menu {
+  width: 20%;
+}
+.menu ul {
+  padding-left: 4rem;
+  list-style: none;
+}
+.menu ul li {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 1.6rem;
+  font-size: 1.15rem;
+}
+#menu-heading {
+  margin-top: 0%;
+  font-weight: 700;
+}
+.collection-images {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+.img-details {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+.img-details h3 {
+    font-size: 1rem;
+  font-family:Arial, Helvetica, sans-serif;
+  margin-bottom: 0.2rem;
+}
+.img-details p
+{
+    font-size: 1rem;
+  font-family:Arial, Helvetica, sans-serif;
+  margin-top: 0.4rem;
+}
+
+/* ------------------------------- About Denim ------------------------------ */  
+
+.about-denim
+{
+    height: 90vh;
+    background: #F0F2FF;
+}
+.about-denim .denim-row
+{
+    display: flex;
+    justify-content: space-evenly;
+    position: relative;
+    top: 10%;
+
+}
+.about-denim .denim-row .denim-img
+{
+    width: 40%;
+}
+.about-denim .denim-row .denim-text
+{
+    width: 36%;
+}
+.about-denim .denim-row .denim-text p
+{
+    line-height: 2rem;
+    margin-top: 2rem;
+    width: 80%;
+    color: #232323;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.about-denim .denim-row .denim-text img
+{
+    margin-top: 2.4rem;
+}
+
+/*  ----------------------------- Winter Collection -------------------------- */
+
+.winter-collection
+{
+    margin-top: 7rem;
+}
+.winter-collection h1
+{
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+.winter-collection p
+{
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.12em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.product-gallery
+{
+    margin-top: 4rem;
+    flex-direction: column;
+    gap: 3rem;
+    display: flex;
+}
+.product-gallery .product-gallery-row
+{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+/* --------------------------- News Letter --------------------------*/
+
+.newsletter
+{
+    margin-top: 7rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+.newsletter .newsletter-text
+{
+    width: 40%;
+}
+.newsletter .newsletter-img
+{
+    width: 40%;
+}
+.newsletter h1
+{
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-top: 2rem;
+}
+.newsletter p
+{
+    margin-top: 1rem;
+    font-size: 1.2em;
+    line-height: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.newsletter img
+{
+    margin-top: 1rem;
+}
+
+/* ------------------------ Instagram Posts --------------------------  */ 
+
+.posts
+{
+    margin-top: 8rem;
+    background: #F8F2ED;
+    display: flex;
+    justify-content: space-evenly;
+}
+.posts .img1
+{
+    padding-top: 8rem;
+    width: 28%;
+    padding-bottom: 6rem;
+}
+.posts .img1 h2
+{
+    text-align: center;
+    font-size: 2.8rem;
+    width: 90%;
+    margin-bottom: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.posts .img1
+{
+    display: flex;
+    flex-direction: column;
+}
+#follow-us
+{
+    width: 152px;
+    height: 60px;
+    margin-top: 6.5rem;
+}
+
+/* ---------------------- Footer ------------------------*/
+
+.footer
+{
+    margin-top: 6rem;
+    height: 30vh;;
+    background: #252525;
+}
+.footer .row
+{
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer .row .footer-links
+{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+}
+.footer .row .footer-links h3,.footer .row .footer-links p
+{
+    color: #Fff;
+    font-family: 'nunito';
+}
+.footer .row .footer-links h3
+{
+    margin-bottom: 2rem;
+}
+.footer .row .footer-links p
+{
+    margin-top: 1rem;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.footer .social-icons
+{
+  display: flex;
+  margin-top: 1rem;
+  gap: 0.8rem;
+}
+footer
+{
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--black);
+  color: #F0F2FF;
+}
+footer a
+{
+  color: #4e62e3;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-bottom: 1px solid #4e62e3;
+  margin-left: 1rem;
+}
+
+/* ------------------------------------ Responsive --------------------------------- */
+/* ------------------------------------- Mobile -------------------------------------*/
+@media(max-width:1200px)
+{
+  .carosel .carosel-row 
+  {
+    gap: 2rem;
+  }
+  .home {
+    height: 120vh;
+  }
+  .carosel .carosel-row .img1, .carosel .carosel-row .img2, .carosel .carosel-row .img3
+  {
+    width: 28%;
+  }
+  .carosel .carosel-row .img1 img, .carosel .carosel-row .img2 img, .carosel .carosel-row .img3 img
+  {
+    width: 100%;
+  }
+  .collection .collection-images .img1, .collection .collection-images .img2, .collection .collection-images .img3
+  {
+    width: 30%;
+  }
+  .collection .collection-images .img1 img, .collection .collection-images .img2 img, .collection .collection-images .img3 img
+  {
+    width: 100%;
+  }
+  .about-denim .denim-row .denim-img img {
+    width: 100%;
+  }
+  .main-headings {
+    font-size: 2.2rem;
+  }
+  .about-denim .denim-row .denim-text p {
+    line-height: 1.8rem;
+    margin-top: 1.6rem;
+    width: 90%;
+    font-size: 1.1rem;
+  }
+  .product-gallery .product-gallery-row {
+    gap: 2rem;
+  }
+  .product-gallery .product-gallery-row .img1, .product-gallery .product-gallery-row .img2, .product-gallery .product-gallery-row .img3
+  {
+    width: 30%;
+  }
+  .product-gallery .product-gallery-row .img1 img, .product-gallery .product-gallery-row .img2 img, .product-gallery .product-gallery-row .img3 img
+  {
+    width: 98%;
+  }
+  .newsletter .newsletter-img {
+    width: 40%;
+  }
+  .newsletter .newsletter-img img {
+    width: 98%;
+  }
+  .newsletter .newsletter-text img
+  {
+    width: 80%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ------------------------------------ Responsive --------------------------------- */
+/* ------------------------------------- Mobile -------------------------------------*/
+
+@media (max-width:600px) {
+
+  /* -------------------------------------- NavBar ----------------------------------- */
+
+  /* 
+  .logo img {
+    height: 35px;
+    width: 60px;
+}
+nav {
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0.6rem;
+} */
+.nav {
+  justify-content: space-between;
+}
+.search-bar {
+    display: none;
+  }
+#logo-img
+{
+  height: 35px;
+  width: 60px;
+}
+
+  .main-headings {
+    font-size: 1.8rem;
+}
+  .home .text .home-heading {
+    font-size: 1.8rem;
+    padding-top: 3rem;
+    padding-left: 0.4rem;
+    width: 99%;
+}
+.home .text .home-description {
+  font-size: 1rem;
+  line-height: 1.6rem;
+  padding: 0 0.4rem;
+}
+  .home {
+   
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .home .text {
+    width: 100%;
+}
+.home .banner {
+  height: auto;
+  width: 90%;
+  margin-top: 2rem;
+}
+.home .banner-img
+{
+  width: 90%;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.cta-imgs {
+  width: 90%;
+  justify-content: space-around;
+}
+.cta-imgs img
+{
+  width: 40%;
+  height: auto;
+}
+#watch {
+  height: auto;
+  width: 40%;
+}
+  .carosel .carosel-row {
+   
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.carosel .carosel-row .img1, .carosel .carosel-row .img2 ,.carosel .carosel-row .img3
+{
+  width: 90%;
+}
+.carosel .carosel-row .img1 img, .carosel .carosel-row .img2 img,.carosel .carosel-row .img3 img
+{
+  width: 90%;
+}
+.carosel {
+  height: auto;
+  bottom: 0;
+}
+.collection-images {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.collection-images .img1, .collection-images .img2, .collection-images .img3
+{
+  width: 90%;
+}
+.collection-images .img1 img, .collection-images .img2 img, .collection-images .img3 img
+{
+  width: 98%;
+}
+.collection {
+  height: auto;
+}
+.collection h1 {
+  padding-left: 1rem;
+}
+.collection-row {
+  width: auto;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.menu {
+  width: 100%;
+}
+.menu ul {
+  padding-left: 1rem;
+}
+.about-denim {
+  height: auto;
+  margin-top: 2rem;
+}
+.about-denim .denim-row {
+  flex-wrap: wrap-reverse;
+}
+.about-denim .denim-row .denim-img {
+  width: 96%;
+}
+.about-denim .denim-row .denim-img img{
+  width: 96%;
+}
+.about-denim .denim-row .denim-text {
+  width: 100%;
+  margin: 1.6rem 0;
+  text-align: center;
+}
+.about-denim .denim-text h1
+{
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 0 0.4rem;
+}
+.about-denim .denim-row .denim-text p {
+  line-height: 1.7rem;
+  margin-top: 1.4rem;
+  width: 96%;
+  padding: 0 0.2rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.product-gallery .product-gallery-row {
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.newsletter {
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.newsletter .newsletter-text {
+  width: 100%;
+}
+.winter-collection h1 {
+  font-size: 1.8rem;
+}
+.winter-collection p {
+  font-size: 1rem;
+}
+.newsletter h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.newsletter p {
+  font-size: 1rem;
+  line-height: 1.8rem;
+  text-align: center;
+}
+.newsletter .newsletter-text img {
+  width: 90%;
+  margin-left: 0.8rem;
+}
+.newsletter .newsletter-img {
+  width: 96%;
+}
+.newsletter .newsletter-img img {
+  width: 96%;
+}
+.product-gallery .product-gallery-row .img1, .product-gallery .product-gallery-row .img2, .product-gallery .product-gallery-row .img3 {
+  width: 90%;
+}
+.product-gallery .product-gallery-row .img1 img, .product-gallery .product-gallery-row .img2 img, .product-gallery .product-gallery-row .img3 img {
+  width: 90%;
+}
+.posts .img1 h2 {
+  display: none;
+}
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer {
+  margin-top: 4rem;
+  height: auto;
+  background: var(--black);
+}
+.footer .row .footer-links {
+  width: 100%;
+  margin: 1.4rem 0;
+}
+.footer .row .footer-links h3 {
+  margin-bottom: 1.6rem;
+  font-size: 1rem;
+}
+.footer .logos
+{
+  margin-top: 1.4rem;
+}
+.posts {
+  margin-top: 8rem;
+  background: var(--yellow);
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.posts .img1 {
+  width: 90%;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+#follow-us {
+  margin: 2rem auto;
+}
+}
